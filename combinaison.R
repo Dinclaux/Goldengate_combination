@@ -5,7 +5,7 @@ library(utils)
 # Go to the working directory
 setwd("C:/Users/mdinclaux/Documents/Script/TWB_Robot/Goldengate_combination/")
 
-data <- read.csv("test.csv", header = FALSE, sep = ";", dec = ".",stringsAsFactors = FALSE)
+data <- read.csv("SpaceHex.csv", header = FALSE, sep = ";", dec = ".",stringsAsFactors = FALSE)
 t <- ncol(data)
 
 for(type in c("Coord_name","Coord_num")){
@@ -32,7 +32,7 @@ for (i in seq(1:t)) {
   tot <- c(tot, as.character(data[,i]))
 }
 
-all_combi <- t(combn(tot,4,simplify = TRUE))
+all_combi <- t(combn(tot,2,simplify = TRUE))
 colnames(all_combi) <- letters[1:t]
 all_combi <- as.data.frame(all_combi)
 
